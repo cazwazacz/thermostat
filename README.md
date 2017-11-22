@@ -1,1 +1,1 @@
-Thermostate in Javascript
+Thermostat in Javascript
