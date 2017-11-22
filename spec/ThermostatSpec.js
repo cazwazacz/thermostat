@@ -99,5 +99,12 @@ describe("Thermostat", function() {
       thermostat.switchMode();
       expect(thermostat._isPowerSavingMode).toBe(false);
     });
+
+    it("reduces temperature to new maximum if required", function() {
+      thermostat._isPowerSavingMode = false;
+      thermostat._temp = 100;
+      thermostat.switchMode();
+      expect(thermostat._temp).toEqual(25);
+    });
   });
 });

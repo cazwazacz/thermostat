@@ -55,4 +55,5 @@ Thermostat.prototype.usage = function () {
 
 Thermostat.prototype.switchMode = function () {
   this._isPowerSavingMode = !this._isPowerSavingMode;
+  this._temp = Math.min(this._temp, this.settings.PSMax);
 };
