@@ -7,7 +7,7 @@
   </head>
   <body>
     <h1>Indoor Temperature: <span id="temp"></span></h1>
-    <h1>Outdoor Temperature:<span id="localTemp"></span></h1>
+    <h1>Outdoor Temperature in <span id="cityName"></span>: <span id="localTemp"></span></h1>
     <div>
       <button id="up">Up</button>
       <button id="reset">Reset</button>
@@ -16,6 +16,8 @@
     <div>
       <button id="psm">Powersaving <span id="psm_state"></span></button>
     </div>
+    <input type="text" id="city">
+    <button id="city_button">Choose</button>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="src/Thermostat.js"></script>
     <script type="text/javascript" src="public/index.js"></script>

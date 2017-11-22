@@ -5,12 +5,25 @@ $(document).ready(function() {
   var key = 'b1b15e88fa797225412429c1c50c122a1';
 
   function assemble_url(city, key) {
-    return url + '?city=' + city + '&appid=' + key;
+    return url + '?q=' + city + '&appid=' + key;
   };
-  
-  $.getJSON(assemble_url('London,uk', key), function(data) {
-    $("#localTemp").html(data.main.temp);
+
+  // $.getJSON(assemble_url('London,uk', key), function(data) {
+  //   $("#localTemp").html(data.main.temp);
+  // });
+
+  $.ajaxSetup({
+    'error': function() { alert('Chosen city does not exist') }
   });
+
+  function getLocalTemp (city = 'London,uk') {
+    $.getJSON(assemble_url(city, key), function(data) {
+        $("#localTemp").html(data.main.temp);
+        $("#cityName").html(data.name);
+    });
+  };
+
+  getLocalTemp();
 
   function update_ps_color() {
     var color = thermostat.isPowerSavingMode() ? "green" : "red";
@@ -33,6 +46,11 @@ $(document).ready(function() {
   };
 
   update();
+
+  $('#city_button').click(function() {
+    var city = $('#city').val();
+    getLocalTemp(city);
+  });
 
   $("#down").click(function() {
     thermostat.down();
