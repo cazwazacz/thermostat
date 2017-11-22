@@ -52,3 +52,7 @@ Thermostat.prototype.usage = function () {
     return "high-usage";
   }
 };
+
+Thermostat.prototype.switchMode = function () {
+  this._isPowerSavingMode = !this._isPowerSavingMode;
+};

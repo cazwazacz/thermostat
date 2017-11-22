@@ -94,4 +94,10 @@ describe("Thermostat", function() {
     });
   });
 
+  describe('#switchMode', function() {
+    it("switches power saving mode on or off", function() {
+      thermostat.switchMode();
+      expect(thermostat._isPowerSavingMode).toBe(false);
+    });
+  });
 });
