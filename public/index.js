@@ -8,10 +8,6 @@ $(document).ready(function() {
     return url + '?q=' + city + '&appid=' + key;
   };
 
-  // $.getJSON(assemble_url('London,uk', key), function(data) {
-  //   $("#localTemp").html(data.main.temp);
-  // });
-
   $.ajaxSetup({
     'error': function() { alert('Chosen city does not exist') }
   });
@@ -39,10 +35,16 @@ $(document).ready(function() {
     $("#temp").html(thermostat.temp());
   };
 
+  function usageColor() {
+    $('#temp').removeClass();
+    $('#temp').addClass(thermostat.usage());
+  }
+
   function update() {
     update_temperature();
     update_ps_text();
     update_ps_color();
+    usageColor();
   };
 
   update();

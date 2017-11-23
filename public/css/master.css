@@ -2,3 +2,15 @@
   background-color: green;
   color: white;
 }
+
+.low-usage {
+  color: green;
+}
+
+.medium-usage {
+  color: blue;
+}
+
+.high-usage {
+  color: red;
+}
