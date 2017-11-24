@@ -7,8 +7,8 @@ $(document).ready(function() {
   }
 
   var thermostat = new Thermostat();
-  var url = 'http://www.openweathermap.org/data/2.5/weather';
-  var key = 'b1b15e88fa797225412429c1c50c122a1';
+  var url = 'http://api.openweathermap.org/data/2.5/weather';
+  var key = 'f93adfeb902ecab387b8b3b6b636cf26';
 
   function assemble_url(city, key) {
     return url + '?q=' + city + '&appid=' + key;
